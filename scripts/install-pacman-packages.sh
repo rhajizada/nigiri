@@ -1,4 +1,4 @@
 HOME=$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)")
-"Installing pacman packages"
+echo "Installing pacman packages"
 sudo pacman -Syu
 cat $HOME/requirements/pacman/packages.txt | xargs sudo pacman -S --needed --needed --noconfirm
