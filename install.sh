@@ -25,22 +25,23 @@ prompt_script() {
   done
 }
 
-# if [[ $UNAME != "Linux" ]]; then
-#   echo "nigiri not supported on $UNAME"
-#   exit 1
-# fi
-#
-# if [[ $DISTRO != "arch" ]]; then
-#   echo "nigiri not supported on $DISTRO"
-#   exit 1
-# fi
+if [[ $UNAME != "Linux" ]]; then
+  echo "nigiri not supported on $UNAME"
+  exit 1
+fi
 
-prompt_script "Do you want to install nerd fonts?" "$HOME/scripts/install-fonts.sh"
-if [ -z "$OMB" ]; then
-  prompt_script "Do you want to install 'Oh My Bash'?" "$HOME/scripts/install-omb.sh"
+if [[ $DISTRO != "arch" ]]; then
+  echo "nigiri not supported on $DISTRO"
+  exit 1
+fi
+
 prompt_script "Do you want to install pacman packages?" "$HOME/scripts/install-pacman-packages.sh"
 if ! command -v yay >/dev/null 2>&1; then
   prompt_script "Do you want to install yay?" "$HOME/scripts/install-yay.sh"
 fi
 prompt_script "Do you want to install yay packages?" "$HOME/scripts/install-yay-packages.sh"
+prompt_script "Do you want to install nerd fonts?" "$HOME/scripts/install-fonts.sh"
+if [ -z "$OMB" ]; then
+  prompt_script "Do you want to install 'Oh My Bash'?" "$HOME/scripts/install-omb.sh"
+fi
 prompt_script "Do you want to install gnome extensions?" "$HOME/scripts/install-gnome-extensions.sh"
