@@ -1,4 +1,3 @@
-HOME=$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)")
 export PATH="$HOME/.local/bin:$PATH"
 echo "Installing 'gnome-extensions-cli'"
 pipx install gnome-extensions-cli --system-site-packages
