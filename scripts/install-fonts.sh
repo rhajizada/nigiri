@@ -1,8 +1,8 @@
 # Install Nerd fonts
 cd /tmp
 echo "Installing fonts"
-mkdir -p $HOME/.local/share
-mkdir -p $HOME/.local/share/fonts
+mkdir -p $HOME/.local/share 2>/dev/null
+mkdir -p $HOME/.local/share/fonts 2>/dev/null
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip
 unzip CascadiaMono.zip -d CascadiaFont
 cp CascadiaFont/*.ttf $HOME/.local/share/fonts
