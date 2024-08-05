@@ -72,7 +72,6 @@ colord-sane
 compiler-rt
 composefs
 confuse
-containerd
 coreutils
 cracklib
 cryptsetup
@@ -91,8 +90,6 @@ device-mapper
 diffutils
 djvulibre
 dnssec-anchors
-docker
-docker-compose
 dotconf
 double-conversion
 dtc
@@ -508,7 +505,6 @@ libqrtr-glib
 libqxp
 libraqm
 libraw1394
-libreoffice-still
 librest
 librevenge
 librsvg

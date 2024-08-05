@@ -2,11 +2,8 @@ appimaged-bin
 appimagelauncher
 appimagelauncher-debug
 google-chrome
-lazydocker
-lazydocker-debug
 nvm
 snapd
-sqlectron
 udevil-debug
 ulauncher
 visual-studio-code-bin

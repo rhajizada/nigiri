@@ -35,13 +35,12 @@ if [[ $DISTRO != "arch" ]]; then
   exit 1
 fi
 
+prompt_script "Do you want to install nerd fonts?" "$HOME/scripts/install-fonts.sh"
 prompt_script "Do you want to install pacman packages?" "$HOME/scripts/install-pacman-packages.sh"
 if ! command -v yay >/dev/null 2>&1; then
   prompt_script "Do you want to install yay?" "$HOME/scripts/install-yay.sh"
 fi
 prompt_script "Do you want to install yay packages?" "$HOME/scripts/install-yay-packages.sh"
-prompt_script "Do you want to install nerd fonts?" "$HOME/scripts/install-fonts.sh"
-if [ -z "$OMB" ]; then
-  prompt_script "Do you want to install 'Oh My Bash'?" "$HOME/scripts/install-omb.sh"
-fi
+prompt_script "Do you want to install 'docker'?" "$HOME/scripts/install-docker.sh"
 prompt_script "Do you want to install gnome extensions?" "$HOME/scripts/install-gnome-extensions.sh"
+prompt_script "Do you want to install 'libreoffice'?" "$HOME/scripts/install-libreoffice.sh"
