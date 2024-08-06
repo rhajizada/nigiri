@@ -258,7 +258,6 @@ gvfs-wsdd
 gzip
 harfbuzz
 harfbuzz-icu
-helm
 hicolor-icon-theme
 hidapi
 highway
@@ -290,13 +289,11 @@ jemalloc
 js115
 json-c
 json-glib
-k9s
 kbd
 keyutils
 kguiaddons5
 kmod
 krb5
-kubectl
 l-smash
 lame
 lazygit

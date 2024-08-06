@@ -1,3 +1,6 @@
+echo "Installing pre-requisites for Tomato.c"
+sudo pacman -S --noconfirm base-devel ncurses mpv pkgconf libnotify
+echo "Installing Tomato.C"
 cd /tmp
 git clone https://github.com/gabrielzschmitz/Tomato.C.git
 cd Tomato.C
