@@ -1,4 +1,30 @@
+#!/bin/bash
+
 set -e
+
+usage() {
+  echo "Usage: $0 [--noconfirm]"
+  echo "  --noconfirm    Disable confirmation prompts"
+  exit 1
+}
+
+noconfirm=false
+
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+  --noconfirm)
+    noconfirm=true
+    ;;
+  -h | --help)
+    usage
+    ;;
+  *)
+    echo "Unknown option: $1"
+    usage
+    ;;
+  esac
+  shift
+done
 
 NIGIRI="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DISTRO=$(cat /etc/os-release 2>/dev/null | grep ^ID= | cut -d= -f2)
@@ -9,19 +35,23 @@ prompt_script() {
   local script=$2
 
   while true; do
-    read -p "$prompt (y/n): " response
-    case "$response" in
-    [yY] | [yY][eE][sS])
+    if $noconfirm; then
       source $script
-      break
-      ;;
-    [nN] | [nN][oO])
-      break
-      ;;
-    *)
-      echo "Invalid input. Please enter y/yes or n/no."
-      ;;
-    esac
+    else
+      read -p "$prompt (y/n): " response
+      case "$response" in
+      [yY] | [yY][eE][sS])
+        source $script
+        break
+        ;;
+      [nN] | [nN][oO])
+        break
+        ;;
+      *)
+        echo "Invalid input. Please enter y/yes or n/no."
+        ;;
+      esac
+    fi
   done
 }
 
@@ -43,5 +73,8 @@ prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-ya
 prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
 prompt_script "Do you want to enable system service?" "$NIGIRI/scripts/enable-services.sh"
 prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
-prompt_script "Do you want to install 'docker'?" "$NIGIRI/scripts/install-docker.sh"
-prompt_script "Do you want to install 'libreoffice'?" "$NIGIRI/scripts/install-libreoffice.sh"
+prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh"
+prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh"
+prompt_script "Do you want to install k8s?" "$NIGIRI/scripts/install-k8s.sh"
+prompt_script "Do you want to install libreoffice?" "$NIGIRI/scripts/install-libreoffice.sh"
+prompt_script "Do you want to install Tomato.C?" "$NIGIRI/scripts/install-tomato.sh"
