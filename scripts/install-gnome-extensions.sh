@@ -9,19 +9,8 @@ gext install blur-my-shell@aunetx
 gext install just-perfection-desktop@just-perfection
 gext install tactile@lundal.io
 gext install no-titlebar-when-maximized@alec.ninja
-gext install apps-menu@gnome-shell-extensions.gcampax.github.com
-gext install auto-move-windows@gnome-shell-extensions.gcampax.github.com
 gext install drive-menu@gnome-shell-extensions.gcampax.github.com
-gext install launch-new-instance@gnome-shell-extensions.gcampax.github.com
-gext install light-style@gnome-shell-extensions.gcampax.github.com
-gext install native-window-placement@gnome-shell-extensions.gcampax.github.com
-gext install places-menu@gnome-shell-extensions.gcampax.github.com
-gext install screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
 gext install system-monitor@gnome-shell-extensions.gcampax.github.com
-gext install user-theme@gnome-shell-extensions.gcampax.github.com
-gext install window-list@gnome-shell-extensions.gcampax.github.com
-gext install windowsNavigator@gnome-shell-extensions.gcampax.github.com
-gext install workspace-indicator@gnome-shell-extensions.gcampax.github.com
 echo "Compiling extension setting schemas"
 sudo cp $HOME/.local/share/gnome-shell/extensions/clipboard-indicator\@tudmotu.com/schemas/org.gnome.shell.extensions.clipboard-indicator.gschema.xml /usr/share/glib-2.0/schemas/
 sudo cp $HOME/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gnome.shell.extensions.space-bar.gschema.xml /usr/share/glib-2.0/schemas/

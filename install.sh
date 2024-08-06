@@ -1,6 +1,6 @@
 set -e
 
-HOME="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NIGIRI="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DISTRO=$(cat /etc/os-release 2>/dev/null | grep ^ID= | cut -d= -f2)
 UNAME=$(uname 2>/dev/null)
 
@@ -35,13 +35,13 @@ if [[ $DISTRO != "arch" ]]; then
   exit 1
 fi
 
-prompt_script "Do you want to install pacman packages?" "$HOME/scripts/install-pacman-packages.sh"
+prompt_script "Do you want to install pacman packages?" "$NIGIRI/scripts/install-pacman-packages.sh"
 if ! command -v yay >/dev/null 2>&1; then
-  prompt_script "Do you want to install yay?" "$HOME/scripts/install-yay.sh"
+  prompt_script "Do you want to install yay?" "$NIGIRI/scripts/install-yay.sh"
 fi
-prompt_script "Do you want to install yay packages?" "$HOME/scripts/install-yay-packages.sh"
-prompt_script "Do you want to enable system service?" "$HOME/scripts/enable-services.sh"
-prompt_script "Do you want to install gnome extensions?" "$HOME/scripts/install-gnome-extensions.sh"
-prompt_script "Do you want to install nerd fonts?" "$HOME/scripts/install-fonts.sh"
-prompt_script "Do you want to install 'docker'?" "$HOME/scripts/install-docker.sh"
-prompt_script "Do you want to install 'libreoffice'?" "$HOME/scripts/install-libreoffice.sh"
+prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-yay-packages.sh"
+prompt_script "Do you want to enable system service?" "$NIGIRI/scripts/enable-services.sh"
+prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
+prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
+prompt_script "Do you want to install 'docker'?" "$NIGIRI/scripts/install-docker.sh"
+prompt_script "Do you want to install 'libreoffice'?" "$NIGIRI/scripts/install-libreoffice.sh"
