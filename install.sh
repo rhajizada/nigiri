@@ -37,6 +37,7 @@ prompt_script() {
   while true; do
     if $noconfirm; then
       source $script
+      break
     else
       read -p "$prompt (y/n): " response
       case "$response" in
