@@ -40,8 +40,8 @@ if ! command -v yay >/dev/null 2>&1; then
   prompt_script "Do you want to install yay?" "$NIGIRI/scripts/install-yay.sh"
 fi
 prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-yay-packages.sh"
+prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
 prompt_script "Do you want to enable system service?" "$NIGIRI/scripts/enable-services.sh"
 prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
-prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
 prompt_script "Do you want to install 'docker'?" "$NIGIRI/scripts/install-docker.sh"
 prompt_script "Do you want to install 'libreoffice'?" "$NIGIRI/scripts/install-libreoffice.sh"
