@@ -69,9 +69,13 @@ prompt_script "Do you want to install pacman packages?" "$NIGIRI/scripts/install
 if ! command -v yay >/dev/null 2>&1; then
   prompt_script "Do you want to install yay?" "$NIGIRI/scripts/install-yay.sh"
 fi
+if ! command -v brew >/dev/null 2>&1; then
+  prompt_script "Do you want to install brew?" "$NIGIRI/scripts/install-brew.sh"
+fi
 prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-yay-packages.sh"
 prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
-prompt_script "Do you want to enable system service?" "$NIGIRI/scripts/enable-services.sh"
+prompt_script "Do you want to install squashfs" "$NIGIRI/scripts/enable-squashfs.sh"
+prompt_script "Do you want to enable system services?" "$NIGIRI/scripts/enable-services.sh"
 prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
 prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh"
 prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh"
