@@ -3,7 +3,8 @@ sudo pacman -S --noconfirm docker docker-compose
 sudo usermod -aG docker ${USER}
 sudo systemctl enable docker.service
 # Use local logging driver - it's more efficient and uses compression by default.
-cat <<EOL >/etc/docker/daemon.json
+sudo mkdir -p /etc/docker
+sudo bash -c 'cat <<EOL > /etc/docker/daemon.json
 {
   "log-driver": "local",
   "log-opts": {
@@ -11,6 +12,6 @@ cat <<EOL >/etc/docker/daemon.json
     "max-file": "5"
   }
 }
-EOL
+EOL'
 echo "Installing 'lazydocker'"
-yay -S lazydocker
+yay -S --noconfirm lazydocker
