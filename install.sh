@@ -75,7 +75,6 @@ if ! command -v brew >/dev/null 2>&1; then
   prompt_script "Do you want to install brew?" "$NIGIRI/scripts/install-brew.sh"
 fi
 prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
-prompt_script "Do you want to install squashfs" "$NIGIRI/scripts/enable-squashfs.sh"
 prompt_script "Do you want to enable system services?" "$NIGIRI/scripts/enable-services.sh"
 prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
 prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh"
