@@ -1,6 +1,16 @@
 export PATH="$HOME/.local/bin:$PATH"
 echo "Installing 'gnome-extensions-cli'"
 pipx install gnome-extensions-cli --system-site-packages
+if [ -d "$HOME/MoreWaita" ]; then
+  echo "Icon theme already installed"
+else
+  echo "Installing icon theme"
+  git clone https://github.com/somepaulo/MoreWaita.git /tmp/MoreWaita
+  cd /tmp/MoreWaita
+  ./install.sh
+  cd --
+  rm -rf /tmp/MoreWaita
+fi
 echo "Installing gnome extensions"
 gext install clipboard-indicator@tudmotu.com
 gext install undecorate@sun.wxg@gmail.com
