@@ -129,6 +129,7 @@ fuse2
 fuse3
 fwupd
 fwupd-efi
+fzf
 gawk
 gc
 gcc
