@@ -10,6 +10,7 @@ else
   ./install.sh
   cd --
   rm -rf /tmp/MoreWaita
+  gsettings set org.gnome.desktop.interface icon-theme "MoreWaita"
 fi
 echo "Installing gnome extensions"
 gext install clipboard-indicator@tudmotu.com
