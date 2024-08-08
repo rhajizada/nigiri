@@ -932,7 +932,6 @@ wolfssl
 wpa_supplicant
 wpebackend-fdo
 wsdd
-x11vnc
 x264
 x265
 xcb-proto
