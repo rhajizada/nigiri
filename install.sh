@@ -33,9 +33,10 @@ UNAME=$(uname 2>/dev/null)
 prompt_script() {
   local prompt=$1
   local script=$2
+  local required=$3
 
   while true; do
-    if $noconfirm; then
+    if $noconfirm && $required; then
       source $script
       break
     else
@@ -66,19 +67,19 @@ if [[ $DISTRO != "arch" ]]; then
   exit 1
 fi
 
-prompt_script "Do you want to install pacman packages?" "$NIGIRI/scripts/install-pacman-packages.sh"
+prompt_script "Do you want to install pacman packages?" "$NIGIRI/scripts/install-pacman-packages.sh" true
 if ! command -v yay >/dev/null 2>&1; then
-  prompt_script "Do you want to install yay?" "$NIGIRI/scripts/install-yay.sh"
+  prompt_script "Do you want to install yay?" "$NIGIRI/scripts/install-yay.sh" true
 fi
-prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-yay-packages.sh"
+prompt_script "Do you want to install yay packages?" "$NIGIRI/scripts/install-yay-packages.sh" true
 if ! command -v brew >/dev/null 2>&1; then
-  prompt_script "Do you want to install brew?" "$NIGIRI/scripts/install-brew.sh"
+  prompt_script "Do you want to install brew?" "$NIGIRI/scripts/install-brew.sh" true
 fi
-prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh"
-prompt_script "Do you want to enable system services?" "$NIGIRI/scripts/enable-services.sh"
-prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh"
-prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh"
-prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh"
-prompt_script "Do you want to install k8s?" "$NIGIRI/scripts/install-k8s.sh"
-prompt_script "Do you want to install libreoffice?" "$NIGIRI/scripts/install-libreoffice.sh"
-prompt_script "Do you want to install Tomato.C?" "$NIGIRI/scripts/install-tomato.sh"
+prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh" true
+prompt_script "Do you want to enable system services?" "$NIGIRI/scripts/enable-services.sh" true
+prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh" true
+prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh" false
+prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh" false
+prompt_script "Do you want to install k8s?" "$NIGIRI/scripts/install-k8s.sh" false
+prompt_script "Do you want to install libreoffice?" "$NIGIRI/scripts/install-libreoffice.sh" false
+prompt_script "Do you want to install Tomato.C?" "$NIGIRI/scripts/install-tomato.sh" false
