@@ -1,12 +1,9 @@
-sudo rm /usr/share/applications/qv4l2.desktop
-sudo rm /usr/share/applications/qvidcap.desktop
-sudo rm /usr/share/applications/assistant.desktop
-sudo rm /usr/share/applications/avahi-discover.desktop
-sudo rm /usr/share/applications/java-java-openjdk.desktop
-sudo rm /usr/share/applications/jshell-java-openjdk.desktop
-sudo rm /usr/share/applications/jconsole-java-openjdk.desktop
-sudo rm /usr/share/applications/qdbusviewer.desktop
-sudo rm /usr/share/applications/linguist.desktop
-sudo rm /usr/share/applications/designer.desktop
-sudo rm /usr/share/applications/bssh.desktop
-sudo rm /usr/share/applications/bvnc.desktop
+entries=("assistant" "avahi-discover" "bssh" "bvnc" "designer" "java-java-openjdk" "jconsole-java-openjdk" "jshell-java-openjdk" "linguist" "qdbusviewer" "qv4l2" "qvidcap")
+echo "Removing desktop entries"
+for entry in "${entries[@]}"; do
+  entry_file="/usr/share/applications/$entry.desktop"
+  if [ -e "$entry_file" ]; then
+    echo "Removing $entry_file"
+    sudo rm $entry_file
+  fi
+done

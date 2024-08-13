@@ -78,6 +78,7 @@ fi
 prompt_script "Do you want to install nerd fonts?" "$NIGIRI/scripts/install-fonts.sh" true
 prompt_script "Do you want to enable system services?" "$NIGIRI/scripts/enable-services.sh" true
 prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/install-gnome-extensions.sh" true
+prompt_script "Do you want to remove desktop entries?" "$NIGIRI/scripts/remove-desktop-entries.sh" false
 prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh" false
 prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh" false
 prompt_script "Do you want to install k8s?" "$NIGIRI/scripts/install-k8s.sh" false
