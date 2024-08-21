@@ -825,6 +825,8 @@ rtkit
 rtmpdump
 rubberband
 runc
+rustup
+rust-analyzer
 rygel
 sane
 sbc
