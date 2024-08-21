@@ -1,7 +1,6 @@
 appimaged-bin
 appimagelauncher
 frogmouth
-google-chrome
 nvm
 snapd
 udevil-debug

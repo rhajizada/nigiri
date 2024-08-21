@@ -113,6 +113,7 @@ fftw
 file
 filesystem
 findutils
+firefox
 flac
 flameshot
 flashrom
