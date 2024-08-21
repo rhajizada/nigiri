@@ -106,6 +106,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Super><Shift>8']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Super><Shift>9']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']"
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 if [ ! -f $HOME/.config/autostart/ulauncher.desktop ]; then
   echo "Adding ulauncher desktop entry"
   mkdir -p $HOME/.config/autostart
