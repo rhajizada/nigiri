@@ -972,6 +972,7 @@ yajl
 yarn
 yelp
 yelp-xsl
+yazi
 zbar
 zenity
 zeromq
