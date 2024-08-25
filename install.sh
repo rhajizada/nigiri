@@ -81,6 +81,7 @@ prompt_script "Do you want to install gnome extensions?" "$NIGIRI/scripts/instal
 prompt_script "Do you want to remove desktop entries?" "$NIGIRI/scripts/remove-desktop-entries.sh" false
 prompt_script "Do you want to install Zsh?" "$NIGIRI/scripts/install-zsh.sh" false
 prompt_script "Do you want to install docker?" "$NIGIRI/scripts/install-docker.sh" false
+prompt_script "Do you want to install ollama?" "$NIGIRI/scripts/install-ollama.sh" false
 prompt_script "Do you want to install snapd" "$NIGIRI/scripts/install-snapd.sh" false
 prompt_script "Do you want to install k8s?" "$NIGIRI/scripts/install-k8s.sh" false
 prompt_script "Do you want to install libreoffice?" "$NIGIRI/scripts/install-libreoffice.sh" false
