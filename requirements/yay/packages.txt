@@ -1,9 +1,11 @@
 appimaged-bin
 appimagelauncher
-frogmouth
+ent
+glow
 nvm
 snapd
 udevil-debug
 ulauncher
 visual-studio-code-bin
 yay
+yq
