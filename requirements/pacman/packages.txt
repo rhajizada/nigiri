@@ -108,6 +108,7 @@ expat
 faac
 faad2
 fakeroot
+fastfetch
 ffmpeg
 fftw
 file
@@ -653,7 +654,6 @@ nano
 nautilus
 ncurses
 ndctl
-neofetch
 neon
 neovim
 net-snmp
