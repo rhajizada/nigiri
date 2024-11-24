@@ -109,6 +109,7 @@ faac
 faad2
 fakeroot
 fastfetch
+fd
 ffmpeg
 fftw
 file
