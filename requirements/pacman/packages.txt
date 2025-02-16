@@ -204,6 +204,7 @@ gnome-user-share
 gnupg
 gnutls
 go
+go-task
 go-tools
 gobject-introspection-runtime
 gom
