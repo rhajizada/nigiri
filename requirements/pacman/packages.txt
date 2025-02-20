@@ -29,6 +29,7 @@ autoconf
 autoconf-archive
 automake
 avahi
+aws-cli
 ayatana-ido
 baobab
 base
