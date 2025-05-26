@@ -910,6 +910,7 @@ usbmuxd
 usbredir
 util-linux
 util-linux-libs
+uv
 v4l-utils
 vapoursynth
 vde2
