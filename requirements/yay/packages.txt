@@ -1,7 +1,5 @@
 appimaged-bin
 appimagelauncher
-ent
-nvm
 snapd
 udevil-debug
 ulauncher

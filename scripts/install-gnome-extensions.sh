@@ -22,13 +22,13 @@ gext install tactile@lundal.io
 gext install no-titlebar-when-maximized@alec.ninja
 gext install drive-menu@gnome-shell-extensions.gcampax.github.com
 gext install system-monitor@gnome-shell-extensions.gcampax.github.com
-echo "Compiling extension setting schemas"
-sudo cp $HOME/.local/share/gnome-shell/extensions/clipboard-indicator\@tudmotu.com/schemas/org.gnome.shell.extensions.clipboard-indicator.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp $HOME/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gnome.shell.extensions.space-bar.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp $HOME/.local/share/gnome-shell/extensions/blur-my-shell\@aunetx/schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp $HOME/.local/share/gnome-shell/extensions/just-perfection-desktop\@just-perfection/schemas/org.gnome.shell.extensions.just-perfection.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp $HOME/.local/share/gnome-shell/extensions/tactile\@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+echo "Compiling extension setting schemas (per-extension)"
+for dir in "$HOME/.local/share/gnome-shell/extensions/"*/schemas; do
+  [ -d "$dir" ] || continue
+  if ls "$dir"/*.gschema.xml >/dev/null 2>&1; then
+    glib-compile-schemas "$dir"
+  fi
+done
 echo "Configuring extensions"
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 gsettings set org.gnome.shell.extensions.tactile col-0 1
