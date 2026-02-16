@@ -21,7 +21,7 @@ gext install just-perfection-desktop@just-perfection
 gext install tactile@lundal.io
 gext install no-titlebar-when-maximized@alec.ninja
 gext install drive-menu@gnome-shell-extensions.gcampax.github.com
-gext install system-monitor@gnome-shell-extensions.gcampax.github.com
+gext install Vitals@CoreCoding.com
 echo "Compiling extension setting schemas (per-extension)"
 for dir in "$HOME/.local/share/gnome-shell/extensions/"*/schemas; do
   [ -d "$dir" ] || continue
